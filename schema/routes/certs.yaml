@@ -1,0 +1,36 @@
+get:
+  summary: Сертификаты сервера авторизации
+  description: |
+      Публичные сертификаты для проверки подлинности токенов
+      
+  operationId: getcerts
+  
+  security: []
+                  
+  responses:
+      200:
+          description: Список сертификатов
+          content: 
+            application/x-pem-file:
+              example: |
+                -----BEGIN CERTIFICATE-----
+                MIIDJzCCAg+gAwIBAgIJAPIoc5vHgeKhMA0GCSqGSIb3DQEBBQUAMDYxNDAyBgNV
+                BAMMK2ZlZGVyYXRlZC1zaWdub24uc3lzdGVtLmdzZXJ2aWNlYWNjb3VudC5jb20w
+                HhcNMjMwNjExMTUyMjUyWhcNMjMwNjI4MDMzNzUyWjA2MTQwMgYDVQQDDCtmZWRl
+                cmF0ZWQtc2lnbm9uLnN5c3RlbS5nc2VydmljZWFjY291bnQuY29tMIIBIjANBgkq
+                hkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8ASqcDDTYmFx53uAkWlmqx8qIx0WQaca
+                swAAb7xGx9XL2T71VPtKKgPqoimXzj4fXT2F3opIgOQgGKxkxw2QrAAoejdIud5U
+                RrZLRponmbMQO3erG5sd8PC29rjekX8/hvX/AMT3zU8JLKVLFR0xJmFdmIomnarp
+                EvWKmG0SNvbuVveprsve0n1W35uodcRe417vlTNnH9j8fesQekvFf8tIWbHouXDg
+                3B1km4gqZBbQ/MWvGriGBY5sfr7A2d0iNe89Aje7pz1RFLUFOu+u/NyD6RwL6qo4
+                /yetAYIzm02a2KAAq03YPs2LHMVQmkh1LtyeuA6bvf9146cAFY4BCQIDAQABozgw
+                NjAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIHgDAWBgNVHSUBAf8EDDAKBggr
+                BgEFBQcDAjANBgkqhkiG9w0BAQUFAAOCAQEABxTV8fKOxY3wIaiMLAEHgXOe8Yqe
+                JaTBe12gMZu5k2mHfzD4hl6Qm/sfbRHayTmQerHSo0s0QSKReAnlNHkgY/3KoeBv
+                FUqwj8hXb1n4Lc+LO4KQbE5lsEn5trhr+8NX1oMuG21fmA3qIsuWio6TgdT9AvT4
+                mZbH8A4cjxwALx8NhYMmGhyhhOUR5nlJN/OUw2aMI1LkKDOscKhthysgItW6OPdJ
+                c/+Yjqbw6qurvK5Tp0A3ycDmAlMIR8J0V3nv5p7m/XEA1mss1tOCAJspsxjxI6CK
+                xvtCTGx8/cvHN/jIcE2wFo7SWjAHiIuLYoIc0pmmTHaFM7yLI1DVoZANBw==
+                -----END CERTIFICATE-----
+      400:
+        $ref: ../responses/_index.yaml#/400

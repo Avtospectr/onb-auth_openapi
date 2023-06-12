@@ -1,0 +1,19 @@
+type: object
+required: 
+    - grant_type
+    - client_secret
+    - client_id
+properties: 
+    grant_type:
+        type: string
+        enum: [ client_credentials ]
+        description: Способ авторизации
+        example: client_credentials
+    client_id:
+        type: string
+        description: Идентификатор приложения
+        example: "asdfqwe123"
+    client_secret:
+        type: string
+        description: Секретный ключ для приложения
+        example: "0000bb5dc8842ca31d4603d6aa11448d1654"

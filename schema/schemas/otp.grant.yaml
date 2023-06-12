@@ -1,0 +1,24 @@
+type: object
+required: 
+    - phone
+    - grant_type
+    - otp
+    - client_id
+properties: 
+    grant_type:
+        type: string
+        enum: [ otp ]
+        description: Способ авторизации
+        example: otp
+    phone:
+        type: string
+        description: Телефон пользователя
+        example: +71234567890
+    otp:
+        type: string
+        description: Одноразовый пароль отправленный в смс
+        example: "0000"
+    client_id:
+        type: string
+        description: Идентификатор приложения
+        example: "asdfqwe123"

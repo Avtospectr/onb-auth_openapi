@@ -1,0 +1,28 @@
+post:
+    tags: 
+        -  Получение токена
+    summary: Аутентификация с Refresh Token
+    description: |
+        Эндпоинт для обмена refresh token на новую пару.
+
+    operationId: createtokenrefresh
+    
+    security: []
+
+    requestBody:
+        description: Создание токена
+        required: true
+        content:
+            application/x-www-form-urlencoded:
+                schema:
+                    $ref: ../schemas/refresh.grant.yaml
+                            
+
+                    
+    responses:
+        200:
+            $ref: ../responses/_index.yaml#/token
+        403:
+            $ref: ../responses/_index.yaml#/403
+        429:
+            $ref: ../responses/_index.yaml#/429

@@ -1,0 +1,25 @@
+type: object
+required:
+  - message
+properties:
+  access_token:
+    title: Токен для авторизации на бекенде
+    type: string
+    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MDdmMTkxZTgxMGMxOTcyOWRlODYwZWEiLCJncm91cCI6ImN1c3RvbWVyIiwiZXhwaXJlcyI6MTY4NjUxMDgxNH0.-pxtW7AEraTNnxkgf-_t0ygCfslMcMHlUSdZhlZKDvk
+  token_type: 
+    type: string
+    title: Тип токена. Всегда Bearer
+    enum: [ Bearer ]
+  expires_in:
+    type: number
+    title: Время жизни токена
+    example: 3600
+    default: 60000
+  refresh_token:
+    type: string
+    title: Токен для обновления Access токена
+    example: IwOGYzYTlmM2YxOTQ5MGE3YmNmMDFkNTVk
+  scope:
+    type: string
+    title: Список ресурсов, к которым предоставлен доступ
+    example: order user address

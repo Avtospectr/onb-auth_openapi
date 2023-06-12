@@ -1,0 +1,28 @@
+post:
+    tags: 
+        -  Получение токена
+    summary: Аутентификация с Client Credentials
+    description: |
+        Эндпоинт для получения токена через идентификатор и секретный ключ приложения. Для 1С.
+
+    operationId: createtokenclient
+    
+    security: []
+
+    requestBody:
+        description: Создание токена
+        required: true
+        content:
+            application/x-www-form-urlencoded:
+                schema:
+                    $ref: ../schemas/client.grant.yaml
+                            
+
+                    
+    responses:
+        200:
+            $ref: ../responses/_index.yaml#/token
+        403:
+            $ref: ../responses/_index.yaml#/403
+        429:
+            $ref: ../responses/_index.yaml#/429

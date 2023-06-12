@@ -1,0 +1,4 @@
+error:
+    $ref: error.yaml
+accessToken:
+    $ref: accesstoken.yaml

@@ -1,0 +1,29 @@
+post:
+    tags: 
+        -  Получение токена
+    summary: Аутентификация с OTP
+    description: |
+        Эндпоинт для получения токена через одноразовый пароль из СМС. \
+        Перед использованием данного эндпоинта, необходимо сгенерировать и отправить покупателю одноразовый пароль отправив запрос на [/phone/otp](#post-/phone/otp).
+
+    operationId: createtokenotp
+    
+    security: []
+
+    requestBody:
+        description: Создание токена
+        required: true
+        content:
+            application/x-www-form-urlencoded:
+                schema:
+                    $ref: ../schemas/otp.grant.yaml
+                            
+
+                    
+    responses:
+        200:
+            $ref: ../responses/_index.yaml#/token
+        403:
+            $ref: ../responses/_index.yaml#/403
+        429:
+            $ref: ../responses/_index.yaml#/429

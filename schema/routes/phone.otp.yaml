@@ -1,0 +1,59 @@
+post:
+    summary: Отправка OTP
+    description: |
+        Создает новый одноразовый пароль и отправляет его в СМС на указанный номер.\
+        На сервере установлено ограничение на количество новых паролей в единицу времени. Если количество паролей превышает лимит, то будет получен ответ:
+        ```
+        429 Too Many Requests
+        ```
+        Так же в каждом ответе будут заголовки *X-RateLimit* показывающие какой сейчас действует лимит, сколько попыток осталось и когда можно будет повторить.
+        
+    operationId: addotp
+    
+    security: []
+
+    requestBody:
+        description: Создание нового OTP
+        required: true
+        content:
+            "application/json":
+                schema:
+                    type: object
+                    required: 
+                        -  phone
+                    properties: 
+                        phone:
+                            type: string
+                            title: Телефон для аутентификации в международном формате
+                            example: "+71234567890"
+                            
+
+                    
+    responses:
+        201:
+            description: Пароль успешно создан и отправлен
+            headers:
+                X-RateLimit-Limit:
+                    schema: 
+                      type: integer
+                      example: 1
+                    description: Максимальное количество запросов в течение текущего окна
+                X-RateLimit-Remaining:
+                    schema: 
+                        type: integer
+                        example: 1
+                    description: Количество запросов, которое еще можно сделать в течение окна
+                X-RateLimit-Reset:
+                    schema: 
+                        type: integer
+                        example: 1
+                    description: Количество секунд через которое лимиты снова будут достпны
+                X-RateLimit-Policy:
+                    schema: 
+                        type: string
+                        example: 1;w=60
+                    description: Политика ограничения запросов. В примере 1 запрос в 60 секунд
+        403:
+            $ref: ../responses/_index.yaml#/403
+        429:
+            $ref: ../responses/_index.yaml#/429

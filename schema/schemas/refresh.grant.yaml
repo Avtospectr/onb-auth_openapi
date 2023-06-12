@@ -1,0 +1,19 @@
+type: object
+required: 
+    - grant_type
+    - client_id
+    - refresh_token
+properties: 
+    grant_type:
+        type: string
+        enum: [ refresh_token ]
+        description: Способ авторизации
+        example: refresh_token
+    client_id:
+        type: string
+        description: Идентификатор приложения
+        example: "asdfqwe123"
+    refresh_token:
+        type: string
+        description: Токен для обновления Access токена
+        example: "IwOGYzYTlmM2YxOTQ5MGE3YmNmMDFkNTVk"

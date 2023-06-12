@@ -1,0 +1,41 @@
+token:
+  $ref: token.yaml
+403:
+  description: Отказано в доступе
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/error.yaml'
+400:
+  description: Ошибка запроса
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/error.yaml'
+429:
+  description: Превышен лимит запросов к эндпоинту
+  headers:
+    X-RateLimit-Limit:
+        schema: 
+          type: integer
+          example: 1
+        description: Максимальное количество запросов в течение текущего окна
+    X-RateLimit-Remaining:
+        schema: 
+            type: integer
+            example: 1
+        description: Количество запросов, которое еще можно сделать в течение окна
+    X-RateLimit-Reset:
+        schema: 
+            type: integer
+            example: 1
+        description: Количество секунд через которое лимиты снова будут достпны
+    X-RateLimit-Policy:
+        schema: 
+            type: string
+            example: 10;w=60
+        description: Политика ограничения запросов. В примере 10 запросов в 60 секунд
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/error.yaml'
