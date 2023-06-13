@@ -13,7 +13,7 @@ properties:
     phone:
         type: string
         description: Телефон пользователя
-        example: +71234567890
+        example: "+71234567890"
     otp:
         type: string
         description: Одноразовый пароль отправленный в смс
