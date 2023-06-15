@@ -22,4 +22,4 @@ properties:
   scope:
     type: string
     title: Список ресурсов, к которым предоставлен доступ
-    example: order user address
+    example: order user address product
