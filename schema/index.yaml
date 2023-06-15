@@ -39,8 +39,8 @@ info:
 servers:
     - url: https://auth.onbexpress.ru
       description: Production Server
-    - url: http://localhost:4000
-      description: Development Server
+    - url: https://mock.onbexpress.ru/auth
+      description: Mock Server
     
 tags: 
     - name: Получение токена
