@@ -10,15 +10,15 @@ properties:
     type: string
     title: Токен для обновления Access токена
     example: IwOGYzYTlmM2YxOTQ5MGE3YmNmMDFkNTVk
-  token_type: 
-    type: string
-    title: Тип токена. Всегда Bearer
-    enum: [ Bearer ]
   expires_in:
     type: number
     title: Время жизни токена
     example: 3600
     default: 60000
+  token_type: 
+    type: string
+    title: Тип токена. Всегда Bearer
+    enum: [ Bearer ]
   scope:
     type: string
     title: Список ресурсов, к которым предоставлен доступ
