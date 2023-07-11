@@ -4,6 +4,7 @@ required:
     - grant_type
     - otp
     - client_id
+    - challenge
 properties: 
     grant_type:
         type: string
@@ -18,6 +19,10 @@ properties:
         type: string
         description: Одноразовый пароль отправленный в смс
         example: "0000"
+    challenge:
+        type: string
+        description: Challenge полученный от сервера при создании OTP
+        example: $2y$10$lLA/PBDhMrb9XFIZOnr6auV3kJ7lduNalFh/X2aUDR6Pa3LL145ve
     client_id:
         type: string
         description: Идентификатор приложения

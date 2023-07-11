@@ -53,6 +53,10 @@ post:
                         type: string
                         example: 1;w=60
                     description: Политика ограничения запросов. В примере 1 запрос в 60 секунд
+            content: 
+                application/json:
+                    schema:
+                        $ref: ../schemas/otp.response.yaml
         403:
             $ref: ../responses/_index.yaml#/403
         429:

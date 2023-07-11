@@ -1,0 +1,13 @@
+type: object
+required: 
+    - challenge
+    - length
+properties: 
+    challenge:
+        type: string
+        description: Строка которую нужно отправить обратно на сервер при авторизации с полученным паролем
+        example: $2y$10$lLA/PBDhMrb9XFIZOnr6auV3kJ7lduNalFh/X2aUDR6Pa3LL145ve
+    length:
+        type: number
+        description: Количество символов в OTP
+        example: 4
