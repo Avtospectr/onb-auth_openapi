@@ -41,6 +41,8 @@ servers:
       description: Production Server
     - url: https://mock.onbexpress.ru/auth
       description: Mock Server
+    - url: https://auth.sandbox.onbexpress.ru
+      description: Sandbox Server
     
 tags: 
     - name: Получение токена
