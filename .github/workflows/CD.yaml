@@ -58,6 +58,6 @@ jobs:
           mkdir -p ~/.ssh
           echo "$remote_key" > ~/.ssh/id_github
           chmod 600 ~/.ssh/id_github
-          rsync -avzr --delete -e "ssh -p 22 -i ~/.ssh/id_github -o StrictHostKeyChecking=no" ${local_dir} ${remote_user}@${remote_host}:/var/app/auth_spec
+          rsync -avzr --delete -e "ssh -p 22 -i ~/.ssh/id_github -o StrictHostKeyChecking=no" ${local_dir} ${remote_user}@${remote_host}:/app/auth_spec
 
       
